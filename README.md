@@ -4,7 +4,7 @@ An open-source table comparison tool that efficiently identifies and visualizes 
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Python Version](https://img.shields.io/badge/python-3.11%2B-blue)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/username/tabcomp/main.yml)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/czhaoca/tabcomp/main.yml)
 
 ## 🚀 Features
 
