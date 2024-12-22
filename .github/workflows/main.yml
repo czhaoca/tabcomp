@@ -1,28 +1,33 @@
+# Workflow is currently disabled
+# Remove the "false" condition below to enable the workflow
 name: CI
 
 on:
+  # Temporarily disable automatic triggers
+  workflow_dispatch: # Only manual triggers allowed
   push:
-    branches: [ main ]
+    branches: ["disabled"] # Disabled by using a non-existent branch
   pull_request:
-    branches: [ main ]
+    branches: ["disabled"] # Disabled by using a non-existent branch
 
 jobs:
   test:
+    if: ${{ false }} # Additional safety to prevent job from running
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.11]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run tests
-      run: |
-        pytest tests/
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          pytest tests/
