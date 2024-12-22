@@ -5,12 +5,6 @@ setup(
     version="1.0.0",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    install_requires=[
-        "pandas",
-        "openpyxl",
-        "xlsxwriter",
-        "pytest",
-        "chardet",  # for encoding detection
-    ],
-    python_requires=">=3.11",
+    install_requires=["pandas", "openpyxl", "xlsxwriter", "pytest", "chardet"],
+    python_requires=">=3.10",  # Updated to support Python 3.10
 )
